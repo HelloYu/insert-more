@@ -7,5 +7,6 @@ npm install --save-dev insert-more-tag
 # Usage
 ```javascript
 var insertMore = require('insert-more-tag');
-insertMore(file); //path
+insertMore.insert(file); //path
+insertMore.remove(file);
 ```

@@ -2,7 +2,9 @@
 // var Console = require('console').Console;
 	var opt = opt || {};
 	opt.tag = '<!--more-->';
-	opt.index = 80;
+	opt.index = 300;
+	//have problem here, do not have good way to solve this, right now.
+	opt.point = '\\r\\n';
 	var insert = function(fd,opt){
 
 		if (!fd) {
@@ -26,7 +28,7 @@
 	}
 	var remove = function(fd,opt){
 		
-		if (!fd) {
+	  if (!fd) {
 	    throw new PluginError('insert-more-tag', 'Missing file option for insert-more-tag');
 	  }
 	  fs.stat(fd,function(err,state) {
@@ -59,8 +61,13 @@
 		fs.readFile(file, function (err, data) {
 		  if (err) throw err;
 		  data = data.toString();
-		  if( data.indexOf(opt.tag) != -1) return;
-			data = data.Insert(opt.index,opt.tag);
+
+		  if( data.length < opt.index || data.indexOf(opt.tag) != -1) return;
+		  var index = data.indexOf(opt.point,opt.index) ;
+		  //not a good idea
+		  index = index != -1 ? index : opt.index ;
+		  console.info(index);
+			data = data.Insert(index,opt.tag);
 			saveFile(file,data);
 		});	
 	}
