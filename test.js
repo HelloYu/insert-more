@@ -1,3 +1,3 @@
 var insertMore = require('./index');
 
-insertMore('test');
+insertMore.remove('test');
