@@ -1,0 +1,27 @@
+{
+  "name": "insert-more-tag",
+  "version": "1.0.0",
+  "description": "reading markdown file and insert '<!-- more -->' tag",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HelloYu/insert-more-tag.git"
+  },
+  "keywords": [
+    "insert",
+    "more",
+    "markdown"
+  ],
+  "author": "HelloYu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HelloYu/insert-more-tag/issues"
+  },
+  "homepage": "https://github.com/HelloYu/insert-more-tag#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
